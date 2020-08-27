@@ -1,4 +1,4 @@
-# Learning Individualized Treatment Rules (ITRs) for Multi-domain Latent Outcomes
+# Learning Optimal Individualized Treatment Rules (ITRs) for Latent Outcomes
 
 For many mental disorders, latent mental status inferred from multiple-domain psychological or clinical symptoms may perform as a better characterization of the underlying disorder status than a simple summary score of the symptoms, and they may also serve as more reliable and representative features to differentiate treatment responses.
 
