@@ -48,15 +48,15 @@ rbm = run_rbms(lrates=c(1, rep(0.5, 4), rep(0.2,2)), niters=rep(50, 8), ny=ny, n
                MCMC=F, cd=1, cal_likelihood=T, outlast=F)
 
 
-# construct surrogate predictors based on fitted RBM
-pred_z0 = predict_z(rbm$b, rbm$w, dat$y0_obs)  
+# construct surrogate variables for the latent states at baseline Z0's based on fitted RBM
+pred_z0 = predict_z(rbm$b, rbm$w, dat$y0_obs)
 H_z = cbind(dat$X, pred_z0)
 
-# construct the surrogate outcome based on the fitted RBM
+# construct the surrogate outcome for the sum of latent Z1's after treatment
 gtilda_Y1 = cal_g_tilda_Y1 (rbm$a, rbm$w,  ny=9, nz=nz, n_cat, dat$y1_obs) 
 
 
-# run AOL with surrogate outcome and predictor (minimize the surrogate outcome), using the "DTRlearn2" package
+# run AOL with surrogate outcome and predictors to minimize the sum of Z1's, using the "DTRlearn2" package
 owl_z = owl(H_z, dat$trt, RR = -gtilda_Y1, n=nobs, K=1, pi=rep(0.5,nobs), augment=F, loss="logit")
 
 
