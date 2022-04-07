@@ -6,7 +6,8 @@ We provide a new paradigm for learning optimal individualized treatment rules (I
 
 
 ### Reference
-**Yuan Chen**, Donglin Zeng, Yuanjia Wang (2020). Learning Individualized Treatment Rules for Multiple-Domain Latent Outcomes. *Journal of the American Statistical Association*. In press.
+**Yuan Chen**, Donglin Zeng, Yuanjia Wang (2021). Learning Individualized Treatment Rules for Multiple-Domain Latent Outcomes. *Journal of the American Statistical Association*, 116(533), 269-282.
+
 
 ### Code 
 In ```functions.R```, we provide the code to simulate data from a RBM model and code to simulate training / test data with observed individual item scores before and after treatment, as well code for implementing the RBM model. Two algorithms are implemented for fitting the RBM model: 1) to maximize the exact likeilhood using gradient ascent, 2) using MCMC approximation for the gradients with the contrastive divergence algorithm. 
